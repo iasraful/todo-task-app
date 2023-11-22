@@ -1,19 +1,23 @@
 /** @format */
 
 import { useDispatch, useSelector } from "react-redux";
-import Todos from "./Todos";
+// import Buttons from "./Buttons";
+
+import Todos from "../../components/Todos";
 import { useEffect } from "react";
-import { getTask } from "../redux/actions/taskAction";
+import { fetchTasks } from "./taskSlice";
 
-const TodosCart = ({ status }) => {
-  const { isLoading, task, error } = useSelector((state) => state);
-  const dispatch = useDispatch();
+//  * @format
 
+// eslint-disable-next-line react/prop-types
+const TasksView = ({ status }) => {
+  const { isLoading, tasks, error } = useSelector((state) => state.tasks);
+  const filteredTasks = tasks.filter((tasks) => tasks.status === status);
+  const dispstch = useDispatch();
+  // Calling asyncronusly api
   useEffect(() => {
-    dispatch(getTask());
+    dispstch(fetchTasks());
   }, []);
-
-  const filteredTasks = task.filter((tasks) => tasks.status === status);
 
   return (
     <div className="bg-green-100 p-4 w-1/3 border">
@@ -35,4 +39,4 @@ const TodosCart = ({ status }) => {
   );
 };
 
-export default TodosCart;
+export default TasksView;

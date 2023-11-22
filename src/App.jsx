@@ -1,6 +1,7 @@
 /** @format */
 
-import TodosCart from "./components/TodosCart";
+// import TodosCart from "./components/TodosCart";
+import TasksView from "./features/task/TasksView";
 
 const App = () => {
   return (
@@ -10,9 +11,9 @@ const App = () => {
         Tasks List
       </h1>
       <div className="flex md:flex-row sm:flex-col justify-center rounded-lg p-8 space-x-4">
-        <TodosCart status="Todo" />
-        <TodosCart status="In-Progress" />
-        <TodosCart status="Done" />
+        <TasksView status="Todo" />
+        <TasksView status="In-Progress" />
+        <TasksView status="Done" />
       </div>
     </div>
   );
