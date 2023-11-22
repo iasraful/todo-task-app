@@ -1,6 +1,6 @@
 # 🚀 Getting started with This App?
 
-## [Click Here](https://github.com/iasraful/todo-task-app.git) To see the live site.
+## [Click Here](https://courageous-mooncake-90f466.netlify.app/) To see the live site.
 
 ### `Clone`
 
